@@ -1,15 +1,19 @@
 # Add 'repo' label to any root file changes
-repo:
+Repo:
   - ./*
   
-gradle:
+Gradle:
   - app/build.gradle
   
-tests:
+Tests:
   - app/src/test/*
   
-actions:
+Actions:
   - .github/*
+  
+Layouts:
+  - app/src/main/res/layout/*
+  
   
 # Add '@domain/core' label to any change within the 'core' package
 #@domain/core:
