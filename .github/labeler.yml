@@ -8,7 +8,7 @@ Gradle:
 Tests:
   - app/src/test/*
   
-@Domoan/Actions:
+@domain/actions:
   - .github/*
   
 Layouts:
