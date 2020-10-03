@@ -26,22 +26,22 @@ do
 done
 
 echo "Saving current workspace"
-CURRENTBRANCH=(git branch --show-current)
+CURRENTBRANCH=$(git branch --show-current)
 echo $CURRENTBRANCH
 git stash #Stage current changes
 
 if [ "$MERGE" = "--DevToAcc" ]; then
-    $TMPBRANCH = "tmpTesting"
+    TMPBRANCH="tmpTesting"
     git checkout testing
     git checkout -b $TMPBRANCH
-    #git merge develop
+    git merge develop
 fi
 
 if [ "$MERGE" = "--AccToMaster" ]; then
-    TMPBRANCH = "tmpMaster"
+    TMPBRANCH="tmpMaster"
     git checkout master
     git checkout -b $TMPBRANCH
-    #git merge testing
+    git merge testing
 fi
 
 if [ $PUSH -eq 1 ]; then 
