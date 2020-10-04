@@ -55,6 +55,8 @@ if [ $PUSH -eq 1 ]; then
     git push origin $TMPBRANCH
 fi
 
+git branch -d $TMPBRANCH
+
 if [ $STASH -eq 1 ]; then
     git checkout $CURRENTBRANCH #Return to initial branch
     git stash pop #and apply stashed changes
