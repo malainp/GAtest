@@ -52,7 +52,7 @@ if [ "$MERGE" = "--AccToMaster" ]; then
 fi
 
 if [ $PUSH -eq 1 ]; then 
-    git push -u origin
+    git push -u origin $TMPBRANCH
 fi
 
 if [ $STASH -eq 1 ]; then
