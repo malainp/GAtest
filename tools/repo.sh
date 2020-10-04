@@ -41,14 +41,14 @@ if [ "$MERGE" = "--DevToAcc" ]; then
     TMPBRANCH="tmpTesting"
     git checkout testing
     git checkout -b $TMPBRANCH
-    git merge develop
+    git merge develop < q
 fi
 
 if [ "$MERGE" = "--AccToMaster" ]; then
     TMPBRANCH="tmpMaster"
     git checkout master
     git checkout -b $TMPBRANCH
-    git merge testing
+    git merge testing < q
 fi
 
 if [ $PUSH -eq 1 ]; then 
