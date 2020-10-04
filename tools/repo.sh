@@ -30,10 +30,10 @@ do
     esac
 done
 
+CURRENTBRANCH=$(git branch --show-current)
+
 if [ $STASH -eq 1 ]; then
     echo "Saving current workspace"
-    CURRENTBRANCH=$(git branch --show-current)
-    echo $CURRENTBRANCH
     git stash #Stage current changes
 fi
 
@@ -55,7 +55,9 @@ if [ $PUSH -eq 1 ]; then
     git push -u origin $TMPBRANCH
 fi
 
-if [ $STASH -eq 1 ]; then
-    git checkout $CURRENTBRANCH #Return to initial branch
+git checkout $CURRENTBRANCH #Return to initial branch
+
+if [ $STASH -eq 1 ]; then    
+    echo "Restoring workspace"
     git stash pop #and apply stashed changes
 fi
