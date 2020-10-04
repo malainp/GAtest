@@ -58,5 +58,4 @@ fi
 if [ $STASH -eq 1 ]; then
     git checkout $CURRENTBRANCH #Return to initial branch
     git stash pop #and apply stashed changes
-    git branch -d $TMPBRANCH
 fi
